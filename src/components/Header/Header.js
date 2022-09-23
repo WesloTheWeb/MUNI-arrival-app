@@ -5,7 +5,7 @@ import classes from './Header.module.scss';
 
 const { headerContainer } = classes;
 
-const Header = (props) => {
+const Header = ({viewRoutes}) => {
     return (
         <header className={headerContainer}>
             <figure>
@@ -16,6 +16,7 @@ const Header = (props) => {
             </figure>
             <div>
                 <Button
+                    clicked={viewRoutes}
                     title="view more"
                 />
             </div>

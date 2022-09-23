@@ -3,7 +3,7 @@
 .generalButton {
     display: inline-block;
     width: 100%;
-    border: solid 2.5px $grey-2-active;
+    border: solid 3px $grey-2-active;
     background-color: transparent;
     font-size: 1.25rem;
     font-family: muniText;
@@ -14,7 +14,7 @@
 
     &:hover {
         cursor: pointer;
-        background-color: #fff;
-        color: #000;
+        color: $grey-2-active;
+        background-color: #dcdcdc;
     }
 }

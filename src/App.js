@@ -1,10 +1,27 @@
-import React from 'react';
+import { React, useState } from 'react';
 import './App.scss';
 import Header from './components/Header/Header';
 import CurrentStop from './containers/CurrentStop/CurrentStop';
 import Dashboard from './containers/Dashboard/Dashboard';
+import { RoutesContext } from './context/RoutesContext';
 
 function App() {
+
+  const [viewingRoutes, isViewingRoutes] = useState(false); // boolean for button to click routes
+
+  // TODO: Finish hooking up context to avoid prop drilling this function.
+  // const viewRoutesHandler = () => {
+  //   isViewingRoutes(!false);
+  //   console.log('Viewing routes:' + viewingRoutes)
+  // }
+
+  // const providerValues = React.useMemo(() => ({
+  //   viewingRoutes, isViewingRoutes
+  // }), [viewingRoutes]);
+
+  const providerValues = () => (({
+    viewingRoutes, isViewingRoutes
+  }), [viewingRoutes]);
 
   const svg = `
     <svg xmlns="http://www.w3.org/2000/svg" fill="#FFF">
@@ -23,15 +40,18 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <CurrentStop
-        letter="F"
-        stopName="Market & Wharves"
-      />
+      <RoutesContext.Provider value={providerValues}>
+        <Header
+        />
+        <CurrentStop
+          letter="F"
+          stopName="Market & Wharves"
+        />
+      </RoutesContext.Provider>
     </div>
   );
 }
 
 export default App;
 
-{/*  */}
+{/*  */ }

@@ -3,9 +3,12 @@ import classes from './Button.module.scss';
 
 const { generalButton } = classes;
 
-const Button = ({title}) => {
+const Button = ({ title, clicked}) => {
     return (
-        <button className={generalButton}>
+        <button 
+            className={generalButton}
+            onClick={clicked}    
+        >
             {title}
         </button>
     );
