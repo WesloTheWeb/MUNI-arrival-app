@@ -1,6 +1,6 @@
 import React from 'react';
 import { logo } from '../../assets/index';
-import Button from '../Button/Button';
+import NavButton from '../NavButton/NavButton';
 import classes from './Header.module.scss';
 
 const { headerContainer } = classes;
@@ -15,7 +15,7 @@ const Header = ({viewRoutes}) => {
                 <h1>Muni Arrival App</h1>
             </figure>
             <div>
-                <Button
+                <NavButton
                     clicked={viewRoutes}
                     title="view more"
                 />
