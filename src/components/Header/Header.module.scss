@@ -1,9 +1,19 @@
 @import '../../variables.scss';
 
 .headerContainer {
-    background-color: #000;
+    background-color: $grey-1;
     display: flex;
     color: $standardTextColor;
+
+    div {
+        align-self: center;
+        margin: 0 2rem;
+        width: 20rem;
+    }
+
+    figure {
+        margin-right: 0
+    }
 
     h1 {
         margin-top: 0;
