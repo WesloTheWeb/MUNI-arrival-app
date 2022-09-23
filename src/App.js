@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.scss';
-import { logo } from './assets/index';
+import Header from './components/Header/Header';
+import CurrentStop from './containers/CurrentStop/CurrentStop';
 import Dashboard from './containers/Dashboard/Dashboard';
 
 function App() {
@@ -22,11 +23,11 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Muni Arrival App</h1>
-      <img 
-        className="logo" 
-        src={logo}
-        alt="muni logo" />
+      <Header />
+      <CurrentStop
+        letter="F"
+        stopName="Market & Wharves"
+      />
     </div>
   );
 }

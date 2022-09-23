@@ -1,0 +1,15 @@
+@import '../../variables.scss';
+
+.headerContainer {
+    background-color: #000;
+    display: flex;
+    color: $standardTextColor;
+
+    h1 {
+        margin-top: 0;
+    }
+
+    img {
+        width: 10%;
+    }
+}
