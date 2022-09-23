@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# SF Muni Upcoming Arrivals App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Requirements
+This is a small basic project for practice with API, and with React. Used as a drill.
 
-## Available Scripts
+### Getting Data
+We’ll be using the [Restbus API](http://restbus.info/) to get data about MUNI, which is a transit agency in San Francisco, CA.
 
-In the project directory, you can run:
+**Core Restbus Concepts**
+- Since we only care about the "sf-muni" agency, that id will be the same in all API calls
+- Routes are identified by the case-sensitive route ID (e.g. `F`)
+- Stops are associated with a route and are identified by a numeric stop ID (e.g. `4534`)
+- Stops do not always have multiple predictions.  Sometimes they only have one and, in rare cases, they may have none.
 
-### `npm start`
+**Example API Endpoints**
+- **All SF Muni Routes** — http://restbus.info/api/agencies/sf-muni/routes
+  + For all routes, get the IDs (`F`) and titles (`F-Market & Wharves`)
+- **Individual Route** — http://restbus.info/api/agencies/sf-muni/routes/F
+  + For a given route ID (`F`), get a list of all stop IDs (`5184`) and titles (`Jones St & Beach St`)
+- **Predictions for a combination of a route and stop** - http://restbus.info/api/agencies/sf-muni/routes/F/stops/5184/predictions
+  + For a given route ID (`F`) and stop ID (`5184`), get arrival times of approaching buses
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Example starting points
+There are several paths we can take to kick this project off:
+- **Getting real arrival times for a set route and stop**
+Replace the hardcoded arrival times with real predictions for a set route and stop. For example, route `F` and stop `5184`.
+- **getting a list of all SF Muni routes**
+Use the RestBus API to replace the truncated, hardcoded list of routes with all the available SF Muni routes
