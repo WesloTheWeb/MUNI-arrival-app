@@ -1,0 +1,20 @@
+@import './variables.scss';
+
+@font-face {
+    font-family: 'muniText';
+    src: local('muniapp'),
+        url("./assets/fonts/muniapp.ttf") format("truetype");
+}
+
+h1 {
+    font-family: muniText;
+    // color: red;
+}
+
+body {
+    background-color: $hotPink;
+}
+
+.logo {
+    width: 50%;
+}
