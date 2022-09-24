@@ -1,0 +1,12 @@
+@import '../../variables.scss';
+
+.muniStop {
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 1rem;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $grey-3-inactive;
+    }
+}

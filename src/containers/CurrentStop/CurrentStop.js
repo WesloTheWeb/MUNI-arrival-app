@@ -20,7 +20,7 @@ const CurrentStop = ({ letter, stopName, location }) => {
                 <MuniRoute
                     disableHL="true"
                     letter="F"
-                    stopName="Market & Wharves"
+                    muniRouteName="Market & Wharves"
                 />
             </div>
             <span className={streetNameContainer}>
