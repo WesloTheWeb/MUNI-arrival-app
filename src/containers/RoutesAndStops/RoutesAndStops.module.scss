@@ -1,5 +1,31 @@
 @import '../../variables.scss';
 
 .container {
+    color: $restingStateColor;
     background-color: $background-fill;
+
+    .tabs {
+        display: flex;
+        justify-content: space-around;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: bold;
+        background-color: $grey-3-inactive;
+
+        div {
+            width: 100%;
+            padding: 2rem;
+
+            &:hover {
+            cursor: pointer;
+            color: #FFF;
+            }
+        }
+    }
+
+    .selectedOption {
+        background-color: $grey-2-active;
+        color: $activeStateTextColor;
+    }
+
 }

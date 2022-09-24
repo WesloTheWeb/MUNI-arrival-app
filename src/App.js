@@ -34,9 +34,9 @@ function App() {
     <div className="App">
       <RoutesContext.Provider value={contextValues}>
         <Header />
-        {viewingRoutes ? 
+        {viewingRoutes ?
           <RoutesAndStops />
-        : null}
+          : null}
         <CurrentStop
           letter="F"
           stopName="Market & Wharves"

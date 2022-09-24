@@ -17,7 +17,7 @@ const Header = ({viewRoutes}) => {
             <div>
                 <NavButton
                     clicked={viewRoutes}
-                    title="view more"
+                    title="view Routes & Stops"
                 />
             </div>
         </header>
