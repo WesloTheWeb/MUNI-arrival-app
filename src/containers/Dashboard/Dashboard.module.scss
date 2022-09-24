@@ -1,10 +1,55 @@
 @import '../../variables.scss';
 
 .dashboardContainer {
+    // display: flex;
+    // flex-direction: column;
+    // flex: 1 1 auto;
+    height: calc(100% - 120px);
     display: flex;
-    flex-direction: column;
-    flex: 1 1 auto;
+    align-items: center;
+    padding: 110px 0px 70px;
+    flex-flow: column nowrap;
+    overflow: auto;
     background-color: $hotPink;
+
+    .prediction {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column nowrap;
+        width: auto;
+        height: 70px;
+        flex-shrink: 0;
+    }
+
+    .predictionNearest {
+        width: 240px;
+        height: 240px;
+        box-shadow: rgba(0, 0, 0, 0.18) 0px 25px 50px;
+        margin-bottom: 20px;
+        background: var(--color-primary);
+        border-radius: 50%;
+
+        .predictionMinutes {
+            font-size: 7.5rem;
+            text-shadow: 0 10px 14px rgba(0, 0, 0, 0.15);
+            line-height: 1;
+        }
+    }
+
+    .predictionMinutes {
+        font-size: 3.125rem;
+        font-weight: 700;
+        letter-spacing: -0.025em;
+    }
+
+    .predictionLabel {
+        opacity: 0.5;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-align: center;
+        font-size: 1.25rem;
+    }
 }
 
 .view {
