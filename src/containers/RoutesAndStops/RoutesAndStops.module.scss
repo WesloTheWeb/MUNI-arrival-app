@@ -28,4 +28,12 @@
         color: $activeStateTextColor;
     }
 
+    .selectionGrid {
+        display: flex;
+        flex-direction: column;
+        padding: 0 2rem 0 2rem;
+        flex: 1 1 auto;
+    }
+
+
 }

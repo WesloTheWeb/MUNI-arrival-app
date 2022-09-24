@@ -1,28 +1,20 @@
 @import '../../variables.scss';
 
 .container {
-    position:absolute;
-    left:0;
-    bottom:0;
-    right:0;
-    background-color: $background-fill;
+    // position:absolute;
+    // left:0;
+    // bottom:0;
+    // right:0;
+    background-color: $grey-1;
     color: $standardTextColor;
     font-size: 1.75rem;
     text-align: center;
     padding: 1rem 4rem 1rem 4rem;
 
-    .indicatorFlex {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .letterContainer {
-        display: inline-block;
-        margin: 0 2.5rem 0 0;
-        font-weight: bold;
-        font-size: 2.7rem;
-        color: $stopTextColor;
+    .selectedTag {
+        font-size: .75rem;
+        text-transform: capitalize;
+        color: $streetTextColor;
     }
 
     .streetNameContainer {
@@ -39,5 +31,11 @@
             margin: 0 .75rem;
         }
     }
-   
+
+    .currentStopContainer {
+        display: flex;
+        justify-content: center;
+        margin-top: auto;
+    }
+
 }

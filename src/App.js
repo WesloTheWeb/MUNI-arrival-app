@@ -36,7 +36,8 @@ function App() {
         <Header />
         {viewingRoutes ?
           <RoutesAndStops />
-          : null}
+          : <Dashboard />
+        }
         <CurrentStop
           letter="F"
           stopName="Market & Wharves"

@@ -1,7 +1,8 @@
 import { React, useState } from 'react';
+import MuniRoute from '../../components/MuniRoute/MuniRoute';
 import classes from './CurrentStop.module.scss';
 
-const { container, letterContainer, indicatorFlex, streetNameContainer } = classes;
+const { container, selectedTag, streetNameContainer, currentStopContainer } = classes;
 const CurrentStop = ({ letter, stopName, location }) => {
 
     // TODO: Find a way to import svgs without the inline jsx.
@@ -14,9 +15,13 @@ const CurrentStop = ({ letter, stopName, location }) => {
 
     return (
         <section className={container}>
-            <div className={indicatorFlex}>
-                <span className={letterContainer}>{letter}</span>
-                <span>{stopName}</span>
+            <span className={selectedTag}>selected</span>
+            <div className={currentStopContainer}>
+                <MuniRoute
+                    disableHL="true"
+                    letter="F"
+                    stopName="Market & Wharves"
+                />
             </div>
             <span className={streetNameContainer}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#FFF" className="w-6 h-6">

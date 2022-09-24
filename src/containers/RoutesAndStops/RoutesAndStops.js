@@ -1,7 +1,8 @@
 import { React, useState } from 'react';
+import MuniRoute from '../../components/MuniRoute/MuniRoute';
 import classes from './RoutesAndStops.module.scss';
 
-const { container, tabs, selectedOption } = classes;
+const { container, tabs, selectedOption, selectionGrid } = classes;
 
 const RoutesAndStops = (props) => {
 
@@ -19,7 +20,7 @@ const RoutesAndStops = (props) => {
     }
 
     return (
-        <section className={container}>
+        <div className={container}>
             <section className={tabs}>
                 <div
                     className={routeState ? selectedOption : null}
@@ -33,7 +34,18 @@ const RoutesAndStops = (props) => {
                     Stops
                 </div>
             </section>
-        </section>
+            <section className={selectionGrid}>
+                <MuniRoute
+                    letter="F"
+                    stopName="Market & Wharves"
+                />
+                <MuniRoute
+                    letter="F"
+                    stopName="Market & Wharves"
+                />
+
+            </section>
+        </div>
     );
 };
 

@@ -1,0 +1,29 @@
+@import '../../variables.scss';
+
+.muniRoute {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $hotPink;
+        color: #FFF;
+    }
+
+}
+
+.muniRouteCurrent {
+
+    &:hover{
+        background-color: none;
+    }
+}
+
+.letterContainer {
+    display: inline-block;
+    margin: 0 2rem 0 0;
+    font-weight: bold;
+    font-size: 2.7rem;
+    color: $stopTextColor;
+}
