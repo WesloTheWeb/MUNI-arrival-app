@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 import './App.scss';
 import Header from './components/Header/Header';
 import CurrentStop from './containers/CurrentStop/CurrentStop';
@@ -8,7 +8,9 @@ import { RoutesContext } from './context/RoutesContext';
 
 function App() {
 
-  const [viewingRoutes, setViewingRoutes] = useState(false)
+  const [viewingRoutes, setViewingRoutes] = useState(false);
+  const [routeData, setRouteData] = useState({});
+  const [stopData, setStopData] = useState({});
 
   const contextValues = {
     viewingRoutes,
@@ -30,12 +32,37 @@ function App() {
       </svg>
   `
 
+  useEffect(() => {
+    const routesURL = `http://restbus.info/api/agencies/sf-muni/routes`;
+    const stopsURL = `http://restbus.info/api/agencies/sf-muni/stops/15650/predictions`;
+
+    // let specificRoute = `${routesURL}/${id}`;
+
+    fetch(`${routesURL}`)
+      .then(res => res.json())
+      .then((data) => {
+        // console.log(data)
+        setRouteData(data);
+      });
+
+    fetch(`${stopsURL}`)
+      .then(res => res.json())
+      .then((data) => {
+        console.log(data);
+        setStopData(data)
+      });
+
+  }, []);
+
   return (
     <div className="App">
       <RoutesContext.Provider value={contextValues}>
         <Header />
         {viewingRoutes ?
-          <RoutesAndStops />
+          <RoutesAndStops
+            routeData={routeData}
+            stopsData={stopData}
+          />
           : <Dashboard />
         }
         <CurrentStop
@@ -45,6 +72,6 @@ function App() {
       </RoutesContext.Provider>
     </div>
   );
-}
+};
 
 export default App;

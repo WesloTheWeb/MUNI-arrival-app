@@ -5,7 +5,7 @@ import classes from './RoutesAndStops.module.scss';
 
 const { container, tabs, selectedOption, selectionGrid } = classes;
 
-const RoutesAndStops = (props) => {
+const RoutesAndStops = ({ routeData, stopsData }) => {
 
     const [routeState, setRouteState] = useState(true);
     const [stopsState, setStopsState] = useState(false);
@@ -18,7 +18,7 @@ const RoutesAndStops = (props) => {
     const selectRoutesHandler = () => {
         setRouteState(true);
         setStopsState(false);
-    }
+    };
 
     return (
         <div className={container}>
@@ -37,26 +37,32 @@ const RoutesAndStops = (props) => {
             </section>
             <section className={selectionGrid}>
                 {routeState
-                    ? (<>
-                        <MuniRoute
-                            letter="F"
-                            muniRouteName="Market & Wharves"
-                        />
-                        <MuniRoute
-                            letter="F"
-                            muniRouteName="Market & Wharves"
-                        />
-                    </>
+                    ? (
+                        routeData.map((line, idx) => {
+                            return (
+                                <>
+                                    <MuniRoute
+                                        key={idx}
+                                        letter={line.id}
+                                        muniRouteName={line.title}
+                                    />
+                                </>
+                            );
+                        })
                     )
                     : null
                 }
                 {stopsState
                     ? (
-                        <>
-                            <MuniStop
-                                muniStopName="Jones St & Beach St."
-                            />
-                        </>
+                        stopsData.map((location) => {
+                            return (
+                                <>
+                                    <MuniStop
+                                        muniStopName={location.stop.title}
+                                    />
+                                </>
+                            );
+                        })
                     ) : null}
             </section>
         </div>

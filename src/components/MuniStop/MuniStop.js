@@ -3,7 +3,7 @@ import classes from './MuniStop.module.scss';
 
 const { muniStop } = classes;
 
-const MuniStop = ({muniStopName}) => {
+const MuniStop = ({ muniStopName }) => {
     return (
         <div className={muniStop}>
             {muniStopName}
