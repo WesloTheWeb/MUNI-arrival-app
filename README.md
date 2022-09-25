@@ -1,4 +1,5 @@
 # SF Muni Upcoming Arrivals App
+- Blocker: API endpoint is a bit funky and nested URL for another endpoint for each stop.
 
 ## Requirements
 This is a small basic project for practice with API, and with React. Used as a drill.

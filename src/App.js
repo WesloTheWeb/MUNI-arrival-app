@@ -48,12 +48,14 @@ function App() {
     fetch(`${stopsURL}`)
       .then(res => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setStopData(data)
       });
 
   }, []);
-
+  
+  console.log(routeData);
+  
   return (
     <div className="App">
       <RoutesContext.Provider value={contextValues}>

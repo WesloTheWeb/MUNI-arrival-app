@@ -20,6 +20,14 @@ const RoutesAndStops = ({ routeData, stopsData }) => {
         setStopsState(false);
     };
 
+    const stopIDs = [];
+
+    routeData.map((place) => {
+        stopIDs.push(place.id);
+    });
+
+    // console.log(stopIDs);
+
     return (
         <div className={container}>
             <section className={tabs}>
@@ -47,7 +55,7 @@ const RoutesAndStops = ({ routeData, stopsData }) => {
                                         muniRouteName={line.title}
                                     />
                                 </>
-                            );
+                            )
                         })
                     )
                     : null
@@ -63,7 +71,8 @@ const RoutesAndStops = ({ routeData, stopsData }) => {
                                 </>
                             );
                         })
-                    ) : null}
+                    ) : null
+                }
             </section>
         </div>
     );
