@@ -38,6 +38,19 @@ function App() {
 
     // let specificRoute = `${routesURL}/${id}`;
 
+/*TODO: Refactor:
+- I think you just put a for loops in the fetch statement - eric
+
+fetch(routeUrl)
+    .then(res => res.json())
+    .then(data => {
+        for i in data {
+            fetch(i["_links"]["self"]["href"])
+        }
+    }
+Accessing ["from"] and ["to"] will require another for loop if you want that data
+*/
+
     fetch(`${routesURL}`)
       .then(res => res.json())
       .then((data) => {
